@@ -2,30 +2,23 @@
 ```console
 wget https://huggingface.co/datasets/Plachta/sampled_audio4ft/resolve/main/sampled_audio4ft_v2.zip
 unzip sampled_audio4ft_v2.zip
-mkdir video_data
-mkdir raw_audio
-mkdir denoised_audio
-mkdir custom_character_voice
-mkdir segmented_character_voice
 
 wget https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer/resolve/main/pretrained_models/D_trilingual.pth -O ./pretrained_models/D_0.pth
 wget https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer/resolve/main/pretrained_models/G_trilingual.pth -O ./pretrained_models/G_0.pth
 wget https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer/resolve/main/configs/uma_trilingual.json -O ./configs/finetune_speaker.json
 ```
-这部分数据可以以只读的方式挂载，也可以复制到容器里面。
 
-## 2. 准备训练数据，见 DATA.MD
-这部分数据可以以只读的方式挂载，也可以复制到容器里面。
+## 2. 准备训练数据
+见 DATA.MD
 
 ## 3. 使用 dockerfile 创建训练用的镜像并启动
 可以改 `docker-composer.yml` 进行启动配置，也可以手动指定 docker run 的参数进行启动配置。
 如果准备是数据的时候选择了挂载的方式，那么数据文件夹在此步骤挂载。
+- 生成镜像 `docker build -t vits_fast_fine_tuning:latest .`
 ### docker-composer 方式
-- 参考 [挂载文件夹的教程](https://docs.docker.com/compose/compose-file/compose-file-v3/#volumes) 编辑 `docker-composer.yml` 来指定训练结果接收到哪个文件夹
 - 使用 `docker-composer up -d` 启动
 
 ### docker run 方式
-- 生成镜像 `docker build -t vits_fast_fine_tuning:latest .`
 - `docker run` 的参数配置：
 	- 使用 `--gpus all` 启用 GPU
 	- 要准备一个输出目录用来接训练产物。启动参数格式：`-mount type=bind,source=接收产物的文件夹,destination=/app/OUTPUT_MODEL`

@@ -1,0 +1,41 @@
+version: "3.5"
+services:
+  vits:
+    image: vits_fast_fine_tuning:latest
+    ports: 
+      - "6006:6006"
+    volumes:
+      - type: bind
+        source: ./OUTPUT_MODEL
+        target: /app/OUTPUT_MODEL
+      - type: bind
+        source: ./custom_character_voice
+        target: /app/custom_character_voice
+        read_only: true
+      - type: bind
+        source: ./denoised_audio
+        target: /app/denoised_audio
+        read_only: true
+      - type: bind
+        source: ./pretrained_models
+        target: /app/pretrained_models
+        read_only: true
+      - type: bind
+        source: ./raw_audio
+        target: /app/raw_audio
+        read_only: true
+      - type: bind
+        source: ./segmented_character_voice
+        target: /app/segmented_character_voice
+        read_only: true
+      - type: bind
+        source: ./video_data
+        target: /app/video_data
+        read_only: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

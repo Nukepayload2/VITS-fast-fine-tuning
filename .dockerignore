@@ -1,0 +1,9 @@
+.vs
+.idea
+custom_character_voice
+denoised_audio
+pretrained_models
+raw_audio
+segmented_character_voice
+video_data
+OUTPUT_MODEL
