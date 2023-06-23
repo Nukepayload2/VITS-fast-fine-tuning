@@ -1,3 +1,16 @@
+# 如何：使用 Docker 创建训练环境并训练
+## 附加许可协议
+此教程及其附带的 docker 相关配置文件仅用于学习交流使用，产物未经声音来源的授权不可传播。擅自传播产物可能面临严厉的民事和刑事处罚。这些后果与代码和教程的作者以及 VITS 社区无关。
+
+如果继续使用此教程及其附带的 docker 相关配置文件，则代表你同意许可协议。
+
+## 系统要求
+- Docker (17+)
+- NVIDIA GPU
+- CUDA 版本至少 11.6，可以装最新的 CUDA SDK
+- 用于访问 Docker Hub 和 nvidia/cuda 镜像的互联网连接
+- 对于 Windows Docker, 需要开启 WSL2 模式
+
 ## 1. 准备模型和辅助数据，以 CJE 为例
 ```console
 wget https://huggingface.co/datasets/Plachta/sampled_audio4ft/resolve/main/sampled_audio4ft_v2.zip
@@ -9,16 +22,8 @@ wget https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer/reso
 ```
 
 ## 2. 准备训练数据
-见 DATA.MD
+见 `DATA.MD`
 
 ## 3. 使用 dockerfile 创建训练用的镜像并启动
-可以改 `docker-composer.yml` 进行启动配置，也可以手动指定 docker run 的参数进行启动配置。
-如果准备是数据的时候选择了挂载的方式，那么数据文件夹在此步骤挂载。
 - 生成镜像 `docker build -t vits_fast_fine_tuning:latest .`
-### docker-composer 方式
-- 使用 `docker-composer up -d` 启动
-
-### docker run 方式
-- `docker run` 的参数配置：
-	- 使用 `--gpus all` 启用 GPU
-	- 要准备一个输出目录用来接训练产物。启动参数格式：`-mount type=bind,source=接收产物的文件夹,destination=/app/OUTPUT_MODEL`
+- 使用 `docker-composer up` 启动容器
