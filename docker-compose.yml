@@ -32,6 +32,10 @@ services:
         source: ./video_data
         target: /app/video_data
         read_only: true
+      - type: bind
+        source: ./sampled_audio4ft
+        target: /app/sampled_audio4ft
+        read_only: true
     deploy:
       resources:
         reservations:

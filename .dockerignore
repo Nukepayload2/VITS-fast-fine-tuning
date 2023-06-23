@@ -6,4 +6,5 @@ pretrained_models
 raw_audio
 segmented_character_voice
 video_data
+sampled_audio4ft
 OUTPUT_MODEL
