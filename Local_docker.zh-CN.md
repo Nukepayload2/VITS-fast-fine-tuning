@@ -22,9 +22,11 @@ wget https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer/reso
 ```
 
 ## 2. 准备训练数据
-见 `DATA.MD`
+见 `DATA.MD`。
+
+`raw_audio` 中 `Rename.ps1` 可用于重命名当前文件夹的 wav 文件，需要先编辑其中的角色名 (占位符为 `YourName`) 再运行。
 
 ## 3. 使用 dockerfile 创建训练用的镜像并启动
 - 生成镜像 `docker build -t vits_fast_fine_tuning:latest .`
-- 根据具体情况修改 preproc-train.sh
-- 使用 `docker-composer up` 启动容器
+- 根据具体情况修改 `preproc-train.sh`
+- 使用 `docker-compose up` 启动容器
