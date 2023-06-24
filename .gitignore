@@ -6,4 +6,4 @@
 /pretrained_models/*.pth
 /configs/finetune_speaker.json
 /sampled_audio4ft.txt
-/sampled_audio4ft/*.wav
+**/*.wav

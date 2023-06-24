@@ -9,3 +9,4 @@ video_data
 sampled_audio4ft
 OUTPUT_MODEL
 preproc-train.sh
+*.md

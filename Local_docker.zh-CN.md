@@ -26,4 +26,5 @@ wget https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer/reso
 
 ## 3. 使用 dockerfile 创建训练用的镜像并启动
 - 生成镜像 `docker build -t vits_fast_fine_tuning:latest .`
+- 根据具体情况修改 preproc-train.sh
 - 使用 `docker-composer up` 启动容器
