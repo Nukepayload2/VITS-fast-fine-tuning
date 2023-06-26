@@ -5,9 +5,9 @@ scikit-learn==1.0.2
 scipy==1.5.2
 numpy==1.21.6
 tensorboard
-torch==1.13.1
-torchvision==0.14.1
-torchaudio==0.13.1
+torch==2.0.1
+torchvision==0.15.2
+torchaudio==2.0.2
 unidecode
 pyopenjtalk==0.1.3
 jamo
