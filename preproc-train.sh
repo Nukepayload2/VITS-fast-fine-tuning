@@ -1,3 +1,4 @@
+#!/bin/bash
 # Procell all audio data
 python3 scripts/video2audio.py
 python3 scripts/denoise_audio.py

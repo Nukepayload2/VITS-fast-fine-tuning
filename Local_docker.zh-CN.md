@@ -7,7 +7,7 @@
 ## 系统要求
 - Docker (17+)
 - NVIDIA GPU
-- CUDA 版本至少 11.6，可以装最新的 CUDA SDK
+- CUDA 版本至少 11.7，可以装最新的 CUDA SDK
 - 用于访问 Docker Hub 和 nvidia/cuda 镜像的互联网连接
 - 对于 Windows Docker, 需要开启 WSL2 模式
 

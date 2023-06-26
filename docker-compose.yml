@@ -1,6 +1,9 @@
 version: "3.5"
 services:
   vits:
+    #entrypoint: /bin/bash
+    #stdin_open: true 
+    #tty: true
     image: vits_fast_fine_tuning:latest
     ports: 
       - "6006:6006"
