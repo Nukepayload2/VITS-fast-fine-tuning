@@ -10,3 +10,5 @@ sampled_audio4ft
 OUTPUT_MODEL
 preproc-train.sh
 *.md
+**/.gitkeep
+**/.ps1
