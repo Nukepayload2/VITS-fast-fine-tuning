@@ -12,3 +12,4 @@ preproc-train.sh
 *.md
 **/.gitkeep
 **/.ps1
+whisper_models

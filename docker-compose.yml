@@ -18,7 +18,7 @@ services:
       - type: bind
         source: ./denoised_audio
         target: /app/denoised_audio
-        read_only: true
+        #read_only: true
       - type: bind
         source: ./pretrained_models
         target: /app/pretrained_models
@@ -30,7 +30,7 @@ services:
       - type: bind
         source: ./segmented_character_voice
         target: /app/segmented_character_voice
-        read_only: true
+        #read_only: true
       - type: bind
         source: ./video_data
         target: /app/video_data
@@ -42,6 +42,10 @@ services:
       - type: bind
         source: ./preproc-train.sh
         target: /app/preproc-train.sh
+        read_only: true
+      - type: bind
+        source: ./whisper_models
+        target: /root/.cache/whisper
         read_only: true
     deploy:
       resources:

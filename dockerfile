@@ -15,6 +15,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa -y
 RUN apt update
 RUN apt install python3.8 -y
 RUN apt install python3-pip -y
+RUN apt install ffmpeg -y
 
 # copy code
 WORKDIR /app

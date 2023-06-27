@@ -7,3 +7,5 @@
 /configs/finetune_speaker.json
 /sampled_audio4ft.txt
 **/*.wav
+/OUTPUT_MODEL
+/whisper_models/*.pt
