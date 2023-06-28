@@ -13,3 +13,4 @@
 /jtalk_dict/*.def
 /jtalk_dict/*.dic
 /jtalk_dict/COPYING
+/hybrid_transformer/*.th

@@ -14,3 +14,4 @@ preproc-train.sh
 **/.ps1
 whisper_models
 jtalk_dict
+hybrid_transformer
