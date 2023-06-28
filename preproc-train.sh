@@ -11,8 +11,10 @@ export OPEN_JTALK_DICT_DIR=/app/jtalk_dict
 python3 preprocess_v2.py --add_auxiliary_data True --languages "CJE"
 
 # Tensorboard
-nohup tensorboard --logdir=./OUTPUT_MODEL &
+nohup tensorboard --bind_all --port 6006 --logdir=./OUTPUT_MODEL &
 
-# Start Training
-# Continue: --cont True
+# Start training (comment if you need to continue)
 python3 finetune_speaker_v2.py -m ./OUTPUT_MODEL --max_epochs "100" --drop_speaker_embed True
+
+# Continue training (comment if you need to start new training)
+#python3 finetune_speaker_v2.py -m ./OUTPUT_MODEL --max_epochs "100" --drop_speaker_embed False --cont True

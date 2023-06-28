@@ -75,3 +75,4 @@ wget https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.
 - 生成镜像 `docker build -t vits_fast_fine_tuning:latest .`
 - 根据具体情况修改 `preproc-train.sh`
 - 使用 `docker-compose up` 启动容器。如果要继续上次的训练，需要附加 `--no-recreate` 参数，否则预处理数据会丢失，导致继续训练之前还要用相同的数据进行预处理。
+- 容器内的 Tensorboard 启动后，[在宿主系统可以访问](http://localhost:6006)
