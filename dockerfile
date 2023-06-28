@@ -38,4 +38,5 @@ RUN python3 setup.py build_ext --inplace
 WORKDIR /app
 
 # Pre-precess and train
+EXPOSE 6006/tcp
 ENTRYPOINT ["./preproc-train.sh"]
