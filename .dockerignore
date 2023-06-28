@@ -13,3 +13,4 @@ preproc-train.sh
 **/.gitkeep
 **/.ps1
 whisper_models
+jtalk_dict

@@ -7,6 +7,7 @@ python3 scripts/short_audio_transcribe.py --languages "CJE" --whisper_size large
 python3 scripts/resample.py
 
 # Process all text data
+export OPEN_JTALK_DICT_DIR=/app/jtalk_dict
 python3 preprocess_v2.py --add_auxiliary_data True --languages "CJE"
 
 # Tensorboard

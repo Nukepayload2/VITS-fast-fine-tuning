@@ -9,3 +9,7 @@
 **/*.wav
 /OUTPUT_MODEL
 /whisper_models/*.pt
+/jtalk_dict/*.bin
+/jtalk_dict/*.def
+/jtalk_dict/*.dic
+/jtalk_dict/COPYING

@@ -38,7 +38,7 @@ services:
       - type: bind
         source: ./sampled_audio4ft
         target: /app/sampled_audio4ft
-        read_only: true
+        #read_only: true
       - type: bind
         source: ./preproc-train.sh
         target: /app/preproc-train.sh
@@ -46,6 +46,10 @@ services:
       - type: bind
         source: ./whisper_models
         target: /root/.cache/whisper
+        read_only: true
+      - type: bind
+        source: ./jtalk_dict
+        target: /app/jtalk_dict
         read_only: true
     deploy:
       resources:

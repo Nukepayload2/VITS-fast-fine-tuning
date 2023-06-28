@@ -34,12 +34,17 @@ wget https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer/reso
 wget https://openaipublic.azureedge.net/main/whisper/models/81f7c96c852ee8fc832187b0132e569d6c3065a3252ed18e56effd0b6a73e524/large-v2.pt -O ./whisper_models/large-v2.pt
 ```
 
+### 下载 pyopenjtalk 所需的数据
+https://downloads.sourceforge.net/open-jtalk/open_jtalk_dic_utf_8-1.11.tar.gz
+
+解压到 `jtalk_dict`
+
 ## 2. 准备训练数据
 按 `DATA.MD` 的要求准备数据。
 
 `raw_audio` 中 `Rename.ps1` 可用于重命名当前文件夹的 wav 文件，需要先编辑其中的角色名 (占位符为 `YourName`) 再运行。
 
-开始下一步之前需要删除 `raw_audio` 中的所有文件，以及所有 `.gitkeep` 文件。要找回这些删除的文件，可以将仓库恢复到初始状态 (`git reset --hard HEAD`)。
+开始下一步之前需要删除 `raw_audio` 中的所有文件，以及所有 `.gitkeep` 文件。要找回这些删除的文件并丢弃本地的修改，可以将仓库恢复到初始状态 (`git reset --hard HEAD`)。
 
 ## 3. 使用 dockerfile 创建训练用的镜像并启动
 - 生成镜像 `docker build -t vits_fast_fine_tuning:latest .`
