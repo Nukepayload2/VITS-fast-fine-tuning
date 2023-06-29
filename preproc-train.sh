@@ -20,8 +20,8 @@ python3 finetune_speaker_v2.py -m ./OUTPUT_MODEL --max_epochs "100" --drop_speak
 #python3 finetune_speaker_v2.py -m ./OUTPUT_MODEL --max_epochs "100" --drop_speaker_embed False --cont True
 
 # Publish artifacts
-python3 rearrange_speaker.py
-mkdir OUTPUT_MODEL
-cp finetune_speaker.json OUTPUT_MODEL
-cp G_latest.pth OUTPUT_MODEL
-cp moegoe_config.json OUTPUT_MODEL
+python3 scripts/rearrange_speaker.py
+mkdir -p OUTPUT_MODEL/publish
+cp finetune_speaker.json OUTPUT_MODEL/publish
+cp G_latest.pth OUTPUT_MODEL/publish
+cp moegoe_config.json OUTPUT_MODEL/publish
