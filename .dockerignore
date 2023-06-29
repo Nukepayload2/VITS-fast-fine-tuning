@@ -15,3 +15,4 @@ preproc-train.sh
 whisper_models
 jtalk_dict
 hybrid_transformer
+configs

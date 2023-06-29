@@ -56,6 +56,10 @@ services:
         source: ./hybrid_transformer
         target: /root/.cache/torch/hub/checkpoints
         read_only: true
+      - type: bind
+        source: ./configs
+        target: /app/configs
+        #read_only: true
     deploy:
       resources:
         reservations:
